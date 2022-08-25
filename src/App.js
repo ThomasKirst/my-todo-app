@@ -17,11 +17,13 @@ function App() {
 
   const [todoList, setTodoList] = useState(todos);
 
+  // 6. addTodo wird mit dem neuen Todo aufgerufen
   function addTodo(newTodo) {
-    console.log(newTodo);
-    // Neuer State: Füge das neue Todo an den Anfang der Liste
+    // 7. Neuer State: Füge das neue Todo an den Anfang der Liste
     // und übernehme alle bestehenden Todos
-    setTodoList([newTodo, ...todoList]);
+    setTodoList([newTodo, ...todoList]); // asynchrone Operation
+
+    // 8. Es wird von React ein Re-render der Komponente(n) angestossen
   }
 
   return (

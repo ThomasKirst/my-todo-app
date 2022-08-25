@@ -1,4 +1,6 @@
+// 1. Step: TodoForm als Komponente erstellen
 export default function TodoForm({ countTodos, onAddTodo }) {
+  // 3. Nimmt den Value aus dem Input Field
   function handleSubmit(event) {
     // Formular nicht ins Nirvana schicken
     event.preventDefault();
@@ -7,14 +9,18 @@ export default function TodoForm({ countTodos, onAddTodo }) {
     const inputValue = form.title.value;
     // "New Todo" => { id: 1234, title: "New Todo"}
 
+    // Objekt erstellen mit allen Informationen, die ein Todo benötigt
     const newTodo = { id: countTodos + 1, title: inputValue };
 
-    onAddTodo(newTodo);
+    // Rufe die Funktion aus, die uns als Prop mitgegeben wurde
+    // und übergebe das newTodo
+    onAddTodo(newTodo); // => addTodo() Funktion in der App.js
 
     form.reset();
     form.title.focus();
   }
 
+  // 2. onSubmit Handler => handleSubmit(event)
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="title">
