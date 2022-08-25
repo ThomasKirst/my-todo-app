@@ -1,0 +1,11 @@
+.App {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.App__list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}

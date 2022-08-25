@@ -21,7 +21,7 @@ function App() {
         <button htmlFor="title">Add Todo</button>
       </form>
 
-      <ul>
+      <ul className="App__list">
         {todos.map((todo) => (
           <TodoItem key={todo.id} title={todo.title} />
         ))}
