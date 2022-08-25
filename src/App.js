@@ -19,7 +19,7 @@ function App() {
 
   function addTodo(newTodo) {
     console.log(newTodo);
-    // Neue State: Füge das neue Todo an den Anfang der Liste
+    // Neuer State: Füge das neue Todo an den Anfang der Liste
     // und übernehme alle bestehenden Todos
     setTodoList([newTodo, ...todoList]);
   }
