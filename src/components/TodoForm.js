@@ -9,11 +9,11 @@ export default function TodoForm({ countTodos, onAddTodo }) {
     const inputValue = form.title.value;
     // "New Todo" => { id: 1234, title: "New Todo"}
 
-    // Objekt erstellen mit allen Informationen, die ein Todo benötigt
+    // 4. Objekt erstellen mit allen Informationen, die ein Todo benötigt
     const newTodo = { id: countTodos + 1, title: inputValue };
 
-    // Rufe die Funktion aus, die uns als Prop mitgegeben wurde
-    // und übergebe das newTodo
+    // 5. Rufe die Funktion aus, die uns als Prop mitgegeben wurde
+    //    und übergebe das newTodo
     onAddTodo(newTodo); // => addTodo() Funktion in der App.js
 
     form.reset();
