@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import TodoForm from './components/TodoForm';
 import TodoItem from './components/TodoItem';
@@ -15,7 +15,15 @@ function App() {
     { id: 6, title: 'Katze füttern', isDone: false },
   ];
 
-  const [todoList, setTodoList] = useState(todos);
+  const [todoList, setTodoList] = useState(loadFromLocal() || todos);
+
+  useEffect(() => {
+    localStorage.setItem('_TODOOOOOS', JSON.stringify(todoList));
+  }, [todoList]);
+
+  function loadFromLocal() {
+    return JSON.parse(localStorage.getItem('_TODOOOOOS'));
+  }
 
   function toggleItem(todoId) {
     const updatedTodos = todoList.map((item) => {

@@ -14,7 +14,7 @@ export default function TodoForm({ onAddTodo }) {
     // "New Todo" => { id: 1234, title: "New Todo"}
 
     // 4. Objekt erstellen mit allen Informationen, die ein Todo benötigt
-    const newTodo = { id: nanoid(), title: inputValue };
+    const newTodo = { id: nanoid(), title: inputValue, isDone: false };
 
     // 5. Rufe die Funktion aus, die uns als Prop mitgegeben wurde
     //    und übergebe das newTodo
