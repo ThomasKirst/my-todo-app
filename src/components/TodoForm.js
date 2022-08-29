@@ -1,8 +1,9 @@
 import { nanoid } from 'nanoid';
+
 import './TodoForm.css';
 
 // 1. Step: TodoForm als Komponente erstellen
-export default function TodoForm({ countTodos, onAddTodo }) {
+export default function TodoForm({ onAddTodo }) {
   // 3. Nimmt den Value aus dem Input Field
   function handleSubmit(event) {
     // Formular nicht ins Nirvana schicken
