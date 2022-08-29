@@ -26,6 +26,10 @@ function App() {
     // 8. Es wird von React ein Re-render der Komponente(n) angestossen
   }
 
+  function removeTodo(id) {
+    setTodoList(todoList.filter((todoItem) => todoItem.id !== id));
+  }
+
   return (
     <div>
       <h1>My Todo App</h1>
@@ -34,7 +38,12 @@ function App() {
 
       <ul className="App__list">
         {todoList.map((todo) => (
-          <TodoItem key={todo.id} title={todo.title} />
+          <TodoItem
+            id={todo.id}
+            key={todo.id}
+            title={todo.title}
+            onRemoveItem={removeTodo}
+          />
         ))}
       </ul>
     </div>
