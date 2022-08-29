@@ -34,7 +34,7 @@ function App() {
     <div className="App">
       <h1>My Todo App</h1>
 
-      <TodoForm countTodos={todoList.length} onAddTodo={addTodo} />
+      <TodoForm onAddTodo={addTodo} />
 
       <ul className="App__list">
         {todoList.map((todo) => (

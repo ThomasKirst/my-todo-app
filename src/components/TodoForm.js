@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import './TodoForm.css';
 
 // 1. Step: TodoForm als Komponente erstellen
@@ -12,7 +13,7 @@ export default function TodoForm({ countTodos, onAddTodo }) {
     // "New Todo" => { id: 1234, title: "New Todo"}
 
     // 4. Objekt erstellen mit allen Informationen, die ein Todo benötigt
-    const newTodo = { id: countTodos + 1, title: inputValue };
+    const newTodo = { id: nanoid(), title: inputValue };
 
     // 5. Rufe die Funktion aus, die uns als Prop mitgegeben wurde
     //    und übergebe das newTodo
