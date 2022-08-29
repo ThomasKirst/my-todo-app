@@ -1,3 +1,5 @@
+import './TodoForm.css';
+
 // 1. Step: TodoForm als Komponente erstellen
 export default function TodoForm({ countTodos, onAddTodo }) {
   // 3. Nimmt den Value aus dem Input Field
@@ -22,12 +24,12 @@ export default function TodoForm({ countTodos, onAddTodo }) {
 
   // 2. onSubmit Handler => handleSubmit(event)
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="Form" onSubmit={handleSubmit}>
       <label htmlFor="title">
         <strong>Add a new todo</strong>
       </label>
       <br />
-      <input type="text" name="title" id="title" />
+      <input className="Form__input" type="text" name="title" id="title" />
       <button>Add Todo</button>
     </form>
   );

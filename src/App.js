@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="App">
       <h1>My Todo App</h1>
 
       <TodoForm countTodos={todoList.length} onAddTodo={addTodo} />
