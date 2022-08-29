@@ -7,15 +7,25 @@ import './App.css';
 
 function App() {
   const todos = [
-    { id: 1, title: 'React Doku lesen' },
-    { id: 2, title: 'Wäsche machen' },
-    { id: 3, title: 'Zahnarzt' },
-    { id: 4, title: 'Rasen mähen' },
-    { id: 5, title: 'Vertrag kündigen' },
-    { id: 6, title: 'Katze füttern' },
+    { id: 1, title: 'React Doku lesen', isDone: false },
+    { id: 2, title: 'Wäsche machen', isDone: false },
+    { id: 3, title: 'Zahnarzt', isDone: false },
+    { id: 4, title: 'Rasen mähen', isDone: true },
+    { id: 5, title: 'Vertrag kündigen', isDone: false },
+    { id: 6, title: 'Katze füttern', isDone: false },
   ];
 
   const [todoList, setTodoList] = useState(todos);
+
+  function toggleItem(todoId) {
+    const updatedTodos = todoList.map((item) => {
+      if (item.id === todoId) {
+        item.isDone = !item.isDone;
+      }
+      return item;
+    });
+    setTodoList(updatedTodos);
+  }
 
   // 6. addTodo wird mit dem neuen Todo aufgerufen
   function addTodo(newTodo) {
@@ -43,6 +53,8 @@ function App() {
             key={todo.id}
             title={todo.title}
             onRemoveItem={removeTodo}
+            onToggleItem={toggleItem}
+            isChecked={todo.isDone}
           />
         ))}
       </ul>
